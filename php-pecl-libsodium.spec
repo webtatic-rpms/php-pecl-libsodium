@@ -33,9 +33,6 @@ Group:          Development/Languages
 URL:            http://pecl.php.net/package/%{pecl_name}
 Source0:        http://pecl.php.net/get/%{pecl_name}-%{version}.tgz
 
-# See https://github.com/jedisct1/libsodium-php/pull/70
-Patch0:         %{pecl_name}-pr70.patch
-
 BuildRequires:  libsodium-devel >= 0.6.0
 BuildRequires:  %{basepkg}-devel > 5.2
 BuildRequires:  %{basepkg}-pear
@@ -70,7 +67,6 @@ mv %{pecl_name}-%{version} NTS
 sed -e '/role="test"/d' -i package.xml
 
 cd NTS
-%patch0 -p1 -b .pr70
 
 # Sanity check, really often broken
 extver=$(sed -n '/#define PHP_LIBSODIUM_VERSION/{s/.* "//;s/".*$//;p}' php_libsodium.h)
@@ -199,3 +195,4 @@ REPORT_EXIT_STATUS=1 \
 * Sun Jun 11 2017 Andy Thompson <andy@webtatic.com> - 1.0.6-1
 - fork from EPEL php-pecl-libsodium-1.0.2-1
 - update to 1.0.6
+- remove pr70 patch released upstream
