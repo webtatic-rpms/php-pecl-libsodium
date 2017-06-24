@@ -27,7 +27,7 @@
 Summary:        Wrapper for the Sodium cryptographic library
 Name:           %{basepkg}-pecl-%{pecl_name}
 Version:        1.0.6
-Release:        1%{?dist}
+Release:        1.1%{?dist}
 License:        BSD
 Group:          Development/Languages
 URL:            http://pecl.php.net/package/%{pecl_name}
@@ -192,6 +192,9 @@ REPORT_EXIT_STATUS=1 \
 
 
 %changelog
+* Sat Jun 24 2017 Andy Thompson <andy@webtatic.com> - 1.0.6-1.1
+- Rebuild for php-7.2.0alpha2 Zend ABI version change
+
 * Sun Jun 11 2017 Andy Thompson <andy@webtatic.com> - 1.0.6-1
 - fork from EPEL php-pecl-libsodium-1.0.2-1
 - update to 1.0.6
